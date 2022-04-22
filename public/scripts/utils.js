@@ -1,5 +1,5 @@
 //selectors
-const inputsToSend = Array.from(document.querySelectorAll('.date-to-send'));
+const inputsToSend = Array.from(document.querySelectorAll('.data-to-send'));
 const dateInput = document.querySelector('.input-date');
 const inputFloorMin = document.querySelector('.input-floor-min');
 const inputFloorMax = document.querySelector('.input-floor-max');
