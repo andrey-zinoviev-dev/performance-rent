@@ -15,6 +15,9 @@ const spaceSchema = new mongoose.Schema({
   },
   additions: {
     type: Object,
+  },
+  occupied: {
+    type: Array,
   }
 });
 

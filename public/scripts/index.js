@@ -1,15 +1,15 @@
-fetch('/showSpaces')
-.then((res) => {
-  return res.json();
-})
-.then((data) => {
-  return data;
-});
+// fetch('/showSpaces')
+// .then((res) => {
+//   return res.json();
+// })
+// .then((data) => {
+//   return data;
+// });
 
 inputsToSend.forEach((input) => {
-  input.addEventListener('input', () => {
+  input.addEventListener('change', () => {
     filterToSend[input.name] = input.value;
-    console.log(filterToSend);
+    // console.log(filterToSend);
     return fetch('/filter', {
       method: 'POST',
       headers: {
