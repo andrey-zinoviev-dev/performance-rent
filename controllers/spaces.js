@@ -16,11 +16,15 @@ const showFilteredSpaces = (req, res) => {
   let minSize;
   let maxSize;
   let maxPrice;
+  let finalDate;
   
   Object.keys(req.body).forEach((key, i, array) => {
     if(key === 'date') {
-      queriedDate = req.body[key].split('.').reverse().join('-');
+      // queriedDate = req.body[key].split('.').reverse().join('-');
       // queriedDate = Date.parse(req.body[key]);
+      queriedDate = req.body[key].split(',');
+      // finalDate = queriedDate[0].split('.').reverse().join('-').concat(`T${queriedDate[1].replace(" ", "")}`);
+      
       // console.log(queriedDate);
     }
     if(key === 'size-min') {
@@ -67,13 +71,14 @@ const showFilteredSpaces = (req, res) => {
   }
 
   if(queriedDate) {
-    // console.log(queriedDate);
-    return Space.find({
-      occupied: { $ne: queriedDate },
-    }).exec((err, docs) => {
-      // console.log(docs);
-      return res.status(200).send(docs);
-    });
+    // console.log(finalDate);
+    
+    // return Space.find({
+    //   occupied: { $ne: finalDate },
+    // }).exec((err, docs) => {
+    //   // console.log(docs);
+    //   return res.status(200).send(docs);
+    // });
   }
 
   if(maxSize) {

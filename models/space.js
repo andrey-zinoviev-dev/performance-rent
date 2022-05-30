@@ -18,6 +18,7 @@ const spaceSchema = new mongoose.Schema({
   },
   occupied: {
     type: Array,
+    // default: [],
   }
 });
 
