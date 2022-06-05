@@ -29,7 +29,11 @@
     </div>
     <!-- <button class="form-submit" type="submit"></button> -->
   </form>
-  
+  <section class="result">
+    <ul class="result__list">
+      
+    </ul>
+  </section>
   <!-- <div class="radio-div">
     <input type="checkbox" name="" id="">
     <label for=""></label>
@@ -46,6 +50,29 @@
     <input type="checkbox" name="" id="">
     <label for=""></label>
   </div> -->
+  <template id="place-element">
+    <li class="result__list-element">
+      <span class="result__list-element-span result__list-element-span_space"></span>
+      <span class="result__list-element-span result__list-element-span_price"></span>
+      <span class="result__list-element-span result__list-element-span_occupied"></span>
+      
+      <div class="result__list-element-timetable">
+        <span class="result__list-element-timetable-span">Выбрать время</span>
+        <!--сделать форму отправки времени для брони, а над ней сделать спан, в котором писать, когда забронировано место, если в тот же день на место уже есть бронь-->
+        <form action="/" class="result__list-element-timetable-form">
+          <div class="">
+            <select name="time-start" id="" class="result__list-element-timetable-form-time-start"></select>
+          </div>
+          <div class="">
+            <select name="time-end" id="" class="result__list-element-timetable-form-time-end"></select>
+          </div>
+        </form>
+      </div>
+    </li>
+  </template>
+  <template id="time-select-value">
+    <option class="result__list-element-timetable-form-time-value"></option>
+  </template>
   <script src="./scripts/utils.js"></script>
   <script src="./scripts/index.js"></script>
 </body>

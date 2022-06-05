@@ -73,12 +73,30 @@ const showFilteredSpaces = (req, res) => {
   if(queriedDate) {
     // console.log(finalDate);
     
-    // return Space.find({
-    //   occupied: { $ne: finalDate },
-    // }).exec((err, docs) => {
-    //   // console.log(docs);
-    //   return res.status(200).send(docs);
-    // });
+    return Space.find({}).exec((err, docs) => {
+      // return docs.forEach((doc) => {
+      //   //check each array position of days occupied
+      //   return doc.occupied.forEach((day) => {
+      //     if(day.length > 1) {
+      //       const splittedDay = day.split(',');
+      //       // console.log(splittedDay);
+      //       if(splittedDay.length === 1) {
+      //         //hardcode test for matching whole rented day and position in database
+      //         // const resultArray = splittedDay[0] !== docs[2].occupied[0];
+      //         const resultArray = docs.filter((doc) => {
+      //           return doc.occupied[0] !== splittedDay[0];
+      //         });
+      //         res.status(200).send({
+      //           resultArray,
+      //         });
+      //       }
+      //     }
+      //   });
+      //   // const separation = doc.occupied.split(',');
+      //   // console.log(separation);
+      // });
+      return res.status(200).send(docs);
+    });
   }
 
   if(maxSize) {
