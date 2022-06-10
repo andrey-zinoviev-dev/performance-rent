@@ -9,10 +9,29 @@ const resultSectionList = resultSection.querySelector('.result__list');
 //templates
 const spaceTemplate = document.querySelector('#place-element');
 const spaceTimeTemplate = document.querySelector('#time-select-value');
+const spaceOptionsButton = document.querySelector('#option-button');
 //functions
 function generateFromTemplate(template, selector) {
   return template.content.cloneNode(true).querySelector(selector);
 };
+function binarySearchArray(array, value, location) {
+  let minDate = 0;
+  let maxDate = array.length -1;
+  for (let i = 0; i< array.length; i++) {
+    let middleValue = Math.floor((minDate + maxDate)/2);
+    if(value > array[middleValue]) {
+      minDate = middleValue + i;
+    }
+    if(value < array[middleValue]) {
+      maxDate = middleValue - i;
+    }
+    if(value === array[middleValue]) {
+      return location.occupied.find((el) => {
+        return el.includes(new Date(array[middleValue]).getDate() && new Date(array[middleValue]).getMonth() + 1);
+      })
+    }
+  }
+}
 //variables
 let filterToSend = {};
 let numberOfHours = 24;

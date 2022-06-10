@@ -22,7 +22,7 @@ const showFilteredSpaces = (req, res) => {
     if(key === 'date') {
       // queriedDate = req.body[key].split('.').reverse().join('-');
       // queriedDate = Date.parse(req.body[key]);
-      queriedDate = req.body[key].split(',');
+      queriedDate = req.body[key].split('.');
       // finalDate = queriedDate[0].split('.').reverse().join('-').concat(`T${queriedDate[1].replace(" ", "")}`);
       
       // console.log(queriedDate);
@@ -72,7 +72,8 @@ const showFilteredSpaces = (req, res) => {
 
   if(queriedDate) {
     // console.log(finalDate);
-    
+    const day = queriedDate.reverse().join('-');
+    console.log(day);
     return Space.find({}).exec((err, docs) => {
       // return docs.forEach((doc) => {
       //   //check each array position of days occupied
@@ -95,7 +96,7 @@ const showFilteredSpaces = (req, res) => {
       //   // const separation = doc.occupied.split(',');
       //   // console.log(separation);
       // });
-      return res.status(200).send(docs);
+      return res.status(200).send({docs, day});
     });
   }
 

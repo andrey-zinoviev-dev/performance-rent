@@ -7,6 +7,9 @@ const spaceSchema = new mongoose.Schema({
   type: {
     type: String,
   },
+  description: {
+    type: String,
+  },
   price: {
     type: Number,
   },
