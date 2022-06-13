@@ -1,4 +1,5 @@
 const Space = require('../models/space');
+// const Option = require('../models/option');
 
 const showAllSpaces = (req, res) => {
   // Object.keys(req.query).forEach((key) => {
@@ -74,27 +75,10 @@ const showFilteredSpaces = (req, res) => {
     // console.log(finalDate);
     const day = queriedDate.reverse().join('-');
     console.log(day);
-    return Space.find({}).exec((err, docs) => {
-      // return docs.forEach((doc) => {
-      //   //check each array position of days occupied
-      //   return doc.occupied.forEach((day) => {
-      //     if(day.length > 1) {
-      //       const splittedDay = day.split(',');
-      //       // console.log(splittedDay);
-      //       if(splittedDay.length === 1) {
-      //         //hardcode test for matching whole rented day and position in database
-      //         // const resultArray = splittedDay[0] !== docs[2].occupied[0];
-      //         const resultArray = docs.filter((doc) => {
-      //           return doc.occupied[0] !== splittedDay[0];
-      //         });
-      //         res.status(200).send({
-      //           resultArray,
-      //         });
-      //       }
-      //     }
-      //   });
-      //   // const separation = doc.occupied.split(',');
-      //   // console.log(separation);
+    return Space.find({}).populate('options', 'options').exec((err, docs) => {
+      
+      // docs.forEach((doc) => {
+      //   console.log(doc);
       // });
       return res.status(200).send({docs, day});
     });

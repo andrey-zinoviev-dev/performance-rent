@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const option = require('./option');
 
 const spaceSchema = new mongoose.Schema({
   floor: {
@@ -22,7 +23,11 @@ const spaceSchema = new mongoose.Schema({
   occupied: {
     type: Array,
     // default: [],
-  }
+  },
+  options:
+    {
+      type: mongoose.Schema.Types.ObjectId, ref: 'option',
+    }
 });
 
 module.exports = mongoose.model('space', spaceSchema);

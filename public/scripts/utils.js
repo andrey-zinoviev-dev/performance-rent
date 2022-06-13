@@ -17,19 +17,31 @@ function generateFromTemplate(template, selector) {
 function binarySearchArray(array, value, location) {
   let minDate = 0;
   let maxDate = array.length -1;
-  for (let i = 0; i< array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     let middleValue = Math.floor((minDate + maxDate)/2);
-    if(value > array[middleValue]) {
-      minDate = middleValue + i;
+    const dateStamp = new Date(array[middleValue].split(',')[0]).getTime();
+    if(value === dateStamp) {
+      return array[middleValue].split(',')[1];
     }
-    if(value < array[middleValue]) {
+    if(value < dateStamp) {
       maxDate = middleValue - i;
     }
-    if(value === array[middleValue]) {
-      return location.occupied.find((el) => {
-        return el.includes(new Date(array[middleValue]).getDate() && new Date(array[middleValue]).getMonth() + 1);
-      })
+    if(value > dateStamp) {
+      minDate = middleValue + i;
     }
+
+
+    // if(value > array[middleValue]) {
+    //   minDate = middleValue + i;
+    // }
+    // if(value < array[middleValue]) {
+    //   maxDate = middleValue - i;
+    // }
+    // if(value === array[middleValue]) {
+    //   return location.occupied.find((el) => {
+    //     return el.includes(new Date(array[middleValue]).getDate() && new Date(array[middleValue]).getMonth() + 1);
+    //   })
+    // }
   }
 }
 //variables

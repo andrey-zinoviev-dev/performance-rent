@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "625ed03ea06a7d4f3954b2fb"
+  },
+  "floor": 1,
+  "type": "craft",
+  "description": "мастерская",
+  "price": 2500,
+  "space": 100,
+  "additions": {},
+  "occupied": [
+    "1993-10-25,14:00-17:00",
+    "2020-10-25,13:00-24:00",
+    "2022-11-10,11:00-15:00"
+  ],
+  "options": {
+    "$oid": "62a5226f3962f4169b84485f"
+  }
+},{
+  "_id": {
+    "$oid": "625ed59eaaf17e71d42528ca"
+  },
+  "floor": 2,
+  "type": "performance",
+  "description": "концертный зал",
+  "price": 4000,
+  "space": 250,
+  "additions": {},
+  "occupied": [
+    "1993-10-25,14:00-17:00"
+  ],
+  "options": {
+    "$oid": "62a527823962f4169b844860"
+  }
+},{
+  "_id": {
+    "$oid": "625ed6e1aaf17e71d42528cb"
+  },
+  "floor": 5,
+  "type": "leisure",
+  "description": "крыша",
+  "price": 6000,
+  "space": 400,
+  "additions": {
+    "bar": 5000,
+    "equipment": 2000
+  },
+  "occupied": [
+    "1993-10-25,14:00-24:00"
+  ],
+  "options": {
+    "$oid": "62a527d13962f4169b844861"
+  }
+},{
+  "_id": {
+    "$oid": "625ed810aaf17e71d42528cc"
+  },
+  "floor": 1,
+  "type": "shop",
+  "description": "шоурум",
+  "price": 1000,
+  "space": 60,
+  "additions": {
+    "music": 1200,
+    "lights": "3000"
+  },
+  "occupied": [
+    "1993-10-25,11:00-13:00"
+  ],
+  "options": {
+    "$oid": "62a528123962f4169b844862"
+  }
+}]
